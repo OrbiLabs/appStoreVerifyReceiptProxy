@@ -8,7 +8,7 @@ https://developer.apple.com/documentation/appstorereceipts/verifyreceipt
 Its based on the serverless framework.
 
 Theoretically, all you should need to do is;
-1. sure you have AWS CLI setup with write permissions in AWS API Gateway and Lambda
+1. make sure you have AWS CLI setup with write permissions in AWS API Gateway and Lambda
 2. clone this repo
 3. npm install
 4. sls deploy
