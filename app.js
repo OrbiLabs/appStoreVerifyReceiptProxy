@@ -78,6 +78,10 @@ app.post('/verifyReceipt', function(request, response){
 //app.listen(3000);
 
 // for lambda
-module.exports = app
+//module.exports = app
+
+// for serverless
+var serverless = require('serverless-http');
+module.exports.handler = serverless(app);
 
 console.log("Listening...")

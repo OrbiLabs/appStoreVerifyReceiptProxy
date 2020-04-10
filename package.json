@@ -12,6 +12,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "serverless-http": "^2.3.2"
+  },
+  "devDependencies": {
+    "serverless-offline": "^6.1.4"
   }
 }
