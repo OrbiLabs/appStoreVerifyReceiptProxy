@@ -20,8 +20,9 @@ https://.....<it will tell you after you deploy>/prod/verifyReceipt
 ... for verification, and you're off to the races.
 
 Here is some swift code that does that:
-
-`	func sendReceiptToApple(_ receiptAsBase64: String) -> Promise<String> {
+	
+~~~~	
+	func sendReceiptToApple(_ receiptAsBase64: String) -> Promise<String> {
 		return Promise { seal in
 		
 			// we've got the receipt data, send it off to apple to verify
@@ -56,7 +57,7 @@ Here is some swift code that does that:
 			}
 			task.resume()
 		}
-	}
-  `
+	}	
+~~~~
 
 I'm probably missing something. Feel free to reach out if you need a hand! 
