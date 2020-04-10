@@ -60,4 +60,4 @@ Here is some swift code that does that:
 	}	
 ~~~~
 
-I'm probably missing something. Feel free to reach out if you need a hand! 
+I'm probably missing something, i'm far from an expert in these technologies. Feel free to reach out if you need a hand!
