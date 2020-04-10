@@ -1,5 +1,5 @@
 # appStoreVerifyReceiptProxy
-Simple node app to accept requests from an app, forward to apple for verification, and return the decoded result.
+Simple serverless node.js app to accept receipt blobs from an app, forward to apple for verification, and return the decoded result.
 
 This is as simple as a web service we could muster to do the needful based on the documentation Apple suggests to do to verify receipts.
 
