@@ -8,10 +8,10 @@ https://developer.apple.com/documentation/appstorereceipts/verifyreceipt
 Its based on the serverless framework.
 
 Theoretically, all you should need to do is;
-# make sure you have AWS CLI setup with write permissions in AWS API Gateway and Lambda
-# clone this repo
-# npm install
-# sls deploy
+1. sure you have AWS CLI setup with write permissions in AWS API Gateway and Lambda
+2. clone this repo
+3. npm install
+4. sls deploy
 
 Once its deployed to your AWS account, update your iOS code to point at this URL for app verification, and you're off to the races.
 
