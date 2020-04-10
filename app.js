@@ -35,7 +35,7 @@ function sendToApple(url, receiptData, responseToClient, onCompletion) {
 
     // if we didn't get ok, then write it back
     if(!response || response.statusCode != 200) {
-      console.out("got bad result, not trying again: ", response)
+      console.log("got bad result, not trying again: ", response)
       responseToClient.sendStatus(400)
     }
 
@@ -54,7 +54,9 @@ app.post('/verifyReceipt', function(request, response){
     // parse out the receipt-data
     var receiptData = request.body["receipt-data"]
     if(receiptData == null) {
+      console.log("Didn't see receipt-data in message, bad request.");
       response.sendStatus(400)
+      return
     }
 
     // always try to prod first
@@ -67,11 +69,15 @@ app.post('/verifyReceipt', function(request, response){
         } else {
           // can process this now
           console.log("Response from prod is good...")
-          processResponseFromApple(applyBody, responseToClient)
+          processResponseFromApple(appleBody, responseToClient)
         }
     })
 });
 
-app.listen(3000);
+// for local
+//app.listen(3000);
+
+// for lambda
+module.exports = app
 
 console.log("Listening...")
