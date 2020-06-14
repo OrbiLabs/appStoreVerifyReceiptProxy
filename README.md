@@ -8,7 +8,8 @@ https://developer.apple.com/documentation/appstorereceipts/verifyreceipt
 It is based on the serverless framework, and was based on this example: https://aws.amazon.com/blogs/compute/going-serverless-migrating-an-express-application-to-amazon-api-gateway-and-aws-lambda/
 
 Theoretically, all you should need to do is;
-1. make sure you have AWS CLI setup with write permissions in AWS API Gateway and Lambda
+1. make sure you have AWS CLI setup with write permissions in AWS API Gateway and Lambda: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html
+2. make sure you have serverless cli all setup: https://www.serverless.com/framework/docs/providers/aws/guide/installation/
 2. clone this repo
 3. npm install
 4. sls deploy
