@@ -31,7 +31,7 @@ function sendToApple(url, receiptData, responseToClient, onCompletion) {
     url: url,
     json: {
       'password': sharedSecret,
-      'exclude-old-transactions': 'true',
+      //'exclude-old-transactions': 'true', Sandbox doesn't seem to work with this! always got a non-latest bit
       'receipt-data': receiptData
     }
   }, function(error, response, body) {
