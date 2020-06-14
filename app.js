@@ -11,11 +11,17 @@ app.use(express.urlencoded({extended: true}));
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
-// expecting the shared secret as the one and only argument, which *should*
+// expecting the shared secret as a lambda env varaible
+// OR if its not there, as the one and only cmd line argument, which *should*
 // be in the 3rd position (after node, and script name)
-var sharedSecret = process.argv[2];
+var sharedSecret = process.env.sharedSecret;
+if (sharedSecret == null || sharedSecret == "") {
+  sharedSecret = process.argv[2];
+}
 
-
+console.log("Shared secret: " + [sharedSecret].map(
+        s => s.slice(0, 4) + s.slice(4).replace(/\S/g, '*')
+    ))
 
 // we need to try twice, first to prod, then to sandbox
 // this method does the raw sending
