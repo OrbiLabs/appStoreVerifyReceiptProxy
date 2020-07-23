@@ -80,11 +80,13 @@ app.post('/verifyReceipt', function(request, response){
     })
 });
 
+app.get('/test', function(request,response){
+  console.log("test is good")
+  response.sendStatus(200)
+});
+
 // for local
 //app.listen(3000);
-
-// for lambda
-//module.exports = app
 
 // for serverless
 var serverless = require('serverless-http');
