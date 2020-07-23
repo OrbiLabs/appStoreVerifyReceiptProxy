@@ -15,8 +15,12 @@ app.use(express.json());
 // OR if its not there, as the one and only cmd line argument, which *should*
 // be in the 3rd position (after node, and script name)
 var sharedSecret = process.env.sharedSecret;
+var localListen = false
 if (sharedSecret == null || sharedSecret == "") {
   sharedSecret = process.argv[2];
+
+  // we assume serverless uses the process env - so if we here, we're listening locally
+  localListen = true
 }
 
 console.log("Shared secret: " + [sharedSecret].map(
@@ -86,10 +90,13 @@ app.get('/test', function(request,response){
 });
 
 // for local
-//app.listen(3000);
+if(localListen) {
+  app.listen(3000);
+  console.log("Listening locally...")
+}
 
 // for serverless
 var serverless = require('serverless-http');
 module.exports.handler = serverless(app);
 
-console.log("Listening...")
+console.log("Started...")
