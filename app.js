@@ -39,9 +39,10 @@ function sendToApple(url, receiptData, responseToClient, onCompletion) {
       'receipt-data': receiptData
     }
   }, function(error, response, body) {
+    console.log("POST complete: ", url);
     console.log("Error: ", error);
     console.log("Status: ", response && response.statusCode);
-    //console.log("Body: " + JSON.stringify(body));
+    console.log("Body: " + JSON.stringify(body).substring(0, 256));
 
     // if we didn't get ok, then write it back
     if(!response || response.statusCode != 200) {
@@ -73,6 +74,7 @@ app.post('/verifyReceipt', function(request, response){
     sendToApple(urlProd, receiptData, response, function(appleBody, responseToClient) {
 
         // if the response is a status of 21007, then resend to sandbox
+        //console.log
         if(appleBody["status"] == 21007) {
           console.log("Sending to sandbox...")
           sendToApple(urlSandbox, receiptData, response, processResponseFromApple)
