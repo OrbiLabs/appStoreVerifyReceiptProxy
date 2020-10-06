@@ -13,9 +13,9 @@
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
     "request": "^2.88.2",
-    "serverless-http": "^2.5.0"
+    "serverless-http": "^2.6.0"
   },
   "devDependencies": {
-    "serverless-offline": "^6.5.0"
+    "serverless-offline": "^6.8.0"
   }
 }
