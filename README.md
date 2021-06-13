@@ -11,8 +11,15 @@ Theoretically, all you should need to do is;
 1. make sure you have AWS CLI setup with write permissions in AWS API Gateway and Lambda: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html
 2. make sure you have serverless cli all setup: https://www.serverless.com/framework/docs/providers/aws/guide/installation/
 2. clone this repo
-3. npm install
-4. sls deploy
+3. `npm install`
+
+Then to deploy live, run
+
+`sls deploy`
+
+To run locally, do the following
+
+`node app.js <shared secret more on this below>`
 
 After it is deployed, it will need to be configured with your App-Specific Shared Secret - this is the key to why verifying receipts needs to happen off-device. You can find your app store shared secret in App Store connect using this method: https://docs.revenuecat.com/docs/itunesconnect-app-specific-shared-secret
 
