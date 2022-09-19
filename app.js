@@ -21,6 +21,10 @@ if (sharedSecret == null || sharedSecret == "") {
 
   // we assume serverless uses the process env - so if we here, we're listening locally
   localListen = true;
+
+  console.log(
+    "Listening locally, not deployed - if you see this in AWS, you likely need to provided a 'sharedSecret' environment variable to the deployed version of the function."
+  );
 }
 
 console.log(

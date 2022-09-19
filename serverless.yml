@@ -1,8 +1,10 @@
+# Receipt validator serverless app
+
 service: pcrv1
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs16.x
   stage: prod
   region: us-east-2
   memorySize: 128
@@ -19,3 +21,5 @@ functions:
           path: /{proxy+}
           method: ANY
           cors: true
+    environment:
+      sharedSecret: ${file(./localVars.yml):sharedSecret}
